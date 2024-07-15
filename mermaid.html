@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mermaid Chart with Scroll and Zoom</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #controls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+        }
+        #mermaid-container {
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+        }
+        #chart {
+            width: 100%;
+            height: 100%;
+            transform-origin: 0 0;
+        }
+        .zoom-btn {
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <button class="zoom-btn" id="zoom-in">+</button>
+        <button class="zoom-btn" id="zoom-out">-</button>
+    </div>
+    <div id="mermaid-container">
+        <div id="chart">
+            <div class="mermaid">
+                flowchart TD
+                Start["Start"] --> MathFoundations["Math Foundations"]
+                MathFoundations --> BasicCoding["Basic Coding (Python, R)"]
+                BasicCoding --> IntermediateCoding["Intermediate Coding"] & DataVisualization["Data Visualization"] & AdvancedMath["Advanced Math and Statistics"]
+                IntermediateCoding --> DataStructures["Data Structures & Algorithms"] & DataProcessing["Data Processing (Pandas, NumPy)"]
+                DataVisualization --> StatisticalAnalysis["Statistical Analysis"]
+                AdvancedMath --> Calculus["Calculus, Linear Algebra, Probability"]
+                DataStructures --> DatabasesSQL["Databases & SQL"]
+                StatisticalAnalysis --> IntermediateCoding
+                Calculus --> MachineLearning["Machine Learning Fundamentals"]
+                DatabasesSQL --> BigData["Big Data Technologies (Hadoop, Spark)"]
+                MachineLearning --> DataWrangling["Data Wrangling"]
+                BigData --> DataPipeline["Data Pipeline Tools (Airflow, Kafka)"]
+                DataProcessing --> ReportingTools["Reporting Tools (Tableau, PowerBI)"]
+                DataWrangling --> MLTools["ML Tools (Scikit-learn, TensorFlow, PyTorch)"]
+                DataPipeline --> DataEngineer["Data Engineer"]
+                ReportingTools --> DataAnalyst["Data Analyst"]
+                MLTools --> DataScientist["Data Scientist"]
+                DataAnalyst --> AdvancedML["Advanced ML (Deep Learning)"]
+                DataScientist --> AdvancedAI["Advanced AI Concepts"]
+                AdvancedML --> ModelDeployment["Model Deployment (Docker, Kubernetes)"] & MonitoringMaintenance["Monitoring & Maintenance (Prometheus, Grafana)"] & AppliedML["Applied ML (NLP, Computer Vision)"]
+                AdvancedAI --> ResearchMethodologies["Research Methodologies"] & AdvancedMLAlgorithms["Advanced ML Algorithms"] & AdvancedAIResearch["Advanced AI Research"]
+                ModelDeployment --> PerformanceOptimization["Performance Optimization (Hyperparameter Tuning)"]
+                ResearchMethodologies --> Experimentation["Experimentation"]
+                PerformanceOptimization --> MLOpsEngineer["ML Ops Engineer"]
+                Experimentation --> MLEngineer["ML Engineer"]
+                AppliedML --> ProblemSolving["Problem Solving"]
+                AdvancedAIResearch --> AISolutionsArchitect["AI Solutions Architect"]
+                ProblemSolving --> AppliedAIScientist["Applied AI Scientist"]
+                nd["Untitled Node"] --> nb["Untitled Node"]
+                AIResearcher["AI Researcher"] --> n5["Untitled Node"]
+                MathFoundations:::clickable
+                BasicCoding:::clickable
+                IntermediateCoding:::clickable
+                DataVisualization:::clickable
+                AdvancedMath:::clickable
+                DataStructures:::clickable
+                DataProcessing:::clickable
+                StatisticalAnalysis:::clickable
+                Calculus:::clickable
+                DatabasesSQL:::clickable
+                MachineLearning:::clickable
+                BigData:::clickable
+                DataWrangling:::clickable
+                DataPipeline:::clickable
+                ReportingTools:::clickable
+                MLTools:::clickable
+                DataEngineer:::clickable
+                DataAnalyst:::clickable
+                DataScientist:::clickable
+                AdvancedML:::clickable
+                AdvancedAI:::clickable
+                ModelDeployment:::clickable
+                MonitoringMaintenance:::clickable
+                AppliedML:::clickable
+                ResearchMethodologies:::clickable
+                AdvancedMLAlgorithms:::clickable
+                AdvancedAIResearch:::clickable
+                PerformanceOptimization:::clickable
+                Experimentation:::clickable
+                MLOpsEngineer:::clickable
+                MLEngineer:::clickable
+                ProblemSolving:::clickable
+                AISolutionsArchitect:::clickable
+                AppliedAIScientist:::clickable
+                AIResearcher:::clickable
+                style DataEngineer color:#FFFFFF, fill:#AA00FF, stroke:#AA00FF
+                style DataAnalyst color:#FFFFFF, stroke:#00C853, fill:#00C853
+                style DataScientist color:#FFFFFF, stroke:#2962FF, fill:#2962FF
+            </div>
+        </div>
+    </div>
+    <script>
+        let scale = 1;
+        const chart = document.getElementById('chart');
+        
+        document.getElementById('zoom-in').addEventListener('click', function() {
+            scale *= 1.1;
+            chart.style.transform = `scale(${scale})`;
+        });
+        
+        document.getElementById('zoom-out').addEventListener('click', function() {
+            scale /= 1.1;
+            chart.style.transform = `scale(${scale})`;
+        });
+    </script>
+</body>
+</html>
+
