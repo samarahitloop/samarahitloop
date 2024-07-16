@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mermaid Chart with Scroll and Zoom</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #controls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+        }
+        #mermaid-container {
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+        }
+        #chart {
+            width: 100%;
+            height: 100%;
+            transform-origin: 0 0;
+        }
+        .zoom-btn {
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="left-container" style="position: absolute; top: 50px; left: 50px;">
+        <img src="hl.png" alt="HL Image" style="max-width: 200px; max-height: 200px;">
+    </div>
+    
+    <div id="controls">
+        <button class="zoom-btn" id="zoom-in">+</button>
+        <button class="zoom-btn" id="zoom-out">-</button>
+    </div>
+    <div id="mermaid-container">
+        <div id="chart">
+            <div class="mermaid">
+                flowchart TD
+                Start(["<b>Start Your Journey with Hitloop!</b>"]) --> MathFoundations["<b>Math Foundations</b> - Calculus, Linear Algebra, Probability<br>All distributions, CDF, PDF, Matrix operations, Correlation, CI Intervals<br><b>Resources: </b><a rel="noopener" href="https://www.coursera.org/specializations/mathematics-machine-learning" target="_blank">R1</a>, <a rel="noopener" href="https://www.3blue1brown.com/topics/linear-algebra" target="_blank">R2</a>, <a rel="noopener" href="https://www.coursera.org/learn/ai-for-everyone" target="_blank">R3</a>, <a rel="noopener" href="https://www.coursera.org/learn/introduction-to-ai" target="_blank">R4</a>"]
+                MathFoundations --> BasicCoding("<b>Medium Coding - Python, R<br></b>IDEs, Basic operators, Flows, Data structures, functions, File handling, Exception handling, Debugging<br>All python libraries, packages, computational complexity<br><b>Resources:&nbsp;</b> <a rel="noopener" href="https://courses.analyticsvidhya.com/courses/introduction-to-data-science" target="_blank">R1</a>, <a rel="noopener" href="https://www.coursera.org/specializations/python" target="_blank">R2</a>, <a rel="noopener" href="https://www.youtube.com/playlist?list=PLZoTAELRMXVNUL99R4bDlVYsncUNvwUBB" target="_blank">R3</a>")
+                BasicCoding --> DataVisualization["<b>Data Visualization,&nbsp;</b><b>Statistical Analysis&nbsp;</b></span>(Pandas, NumPy and Seaborn, Scikit-learn</span>)<br>Data Collection, Reading data, Data representation, All Plots, uni, bivariate, multivariate analysis</span>"]
+                DataStructures["<b>Data Structures &amp; Algorithms<br></b>Version control, Git, ETL Processes, Data Modelling, Architectures"] --> DatabasesSQL["<b>DBMS, Databases </b>- MySql, NoSql, MongoDB, Programming - Java, SQL, Scala<br>Data Quality and Governance, Monitering, Big Data Technologies (Hadoop, Spark)</span><br>"]
+                DatabasesSQL --> DataPipeline["<b>Data Pipeline Tools</b> (Airflow, Kafka)<br><b>Cloud Platforms/ Services: </b>GCP, AWS, Azure<br><b>Resources: </b><a rel="noopener" href="https://www.google.com" target="_blank">R1</a>, <a rel="noopener" href="https://www.google.com" target="_blank">R2</a>"]
+                DataProcessing["<b>Data Processing&nbsp;<br></b>Data standardization, normalization, covairance, Dimensionality Reduction using PCA, t-SNE<br>MNIST, IRIS datasets, Data Cleaning, EDA<br style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: ﬂ°fff¶ß --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 ﬂ°°0000¶ß --tw-ring-shadow: 0 0 ﬂ°°0000¶ß --tw-shadow: 0 0 ﬂ°°0000¶ß --tw-shadow-colored: 0 0 ﬂ°°0000¶ß --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;"><b>Resources:&nbsp; </b><a rel="noopener" href="https://www.coursera.org/learn/python-for-data-visualization" target="_blank">R1</a>, <a rel="noopener" href="https://www.edx.org/learn/data-visualization/harvard-university-data-science-visualization" target="_blank">R2</a>, <a rel="noopener" href="https://www.coursera.org/professional-certificates/ibm-data-science" target="_blank">R3</a>"] --> ReportingTools["<b>Reporting Tools (Tableau, PowerBI, Hadoop, Spark)<br></b>Data Acquisition, Web API, Web Scraping, Beautifulsoup, Tweepy<br><b>Resources:&nbsp;</b><a rel="noopener" href="https://www.google.com" target="_blank">R1</a>, <a rel="noopener" href="https://www.google.com" target="_blank">R2</a>, <a rel="noopener" href="https://www.google.com" target="_blank">R3</a>"] & AdvancedMath["<b>Advanced Math and Statistics<br></b>Depth on Various distributions, Correlation, Dimensionality Reductions<br>Confidence intervals, Hypothesis Testing, depth on vector notations<br><b>Resources: </b><a rel="noopener" href="https://www.google.com" target="_blank">R1</a>, <a rel="noopener" href="https://www.google.com" target="_blank">R2</a>, <a rel="noopener" href="https://www.google.com" target="_blank">R3</a>"] & DataStructures
+                DataPipeline --> DataEngineer["Data Engineer"] & ModelDeployment["<b>Model Deployment</b> (Docker, Kubernetes, DevOps), <b>Packaging, </b><br>Kubeflow, Tensorflow serving, Jenkins, MLFlow"]
+                ReportingTools --> DataAnalyst["Data Analyst"]
+                MLTools["<b>ML Tools (Scikit-learn, TensorFlow, Keras, PyTorch)<br></b>Flask, FastAPI, Streamlit, gradio, Hugginface<br>Cloud Platforms - Google cloud, AWS, Azure ML<br><b>Resources: </b><a rel="noopener" href="https://www.google.com" target="_blank">R1</a>, <a rel="noopener" href="https://www.google.com" target="_blank">R2</a>, <a rel="noopener" href="https://www.google.com" target="_blank">R3</a>"] --> DataScientist["Data Scientist"] & AdvancedAI["<b>Advanced AI Concepts<br></b>Deep Learning models, MLPs, Dropout, Regularization, SGD, GD, Normalization, Optimizers, Auto encoders,&nbsp;<br></span>Calibration of models, productionizing models, AB Testing etc."]
+                AdvancedAI --> AlgorithmOptimization["<b>Algorithms and Optimization</b><br>Model training, Hyper parameter tuning, Optimization methods, System design, Software engineering tools,&nbsp;<br>Git, Version control, Algorithm Design &amp; Analysis, GPU, TPU, Distributed learning, Apache Spark<br><b>Resources: </b><a rel="noopener" href="https://www.google.com" target="_blank">R1</a>, <a rel="noopener" href="https://www.google.com" target="_blank">R2</a>, <a rel="noopener" href="https://www.google.com" target="_blank">R3</a>"] & ResearchMethodologies["<b>Research Methodologies - </b>Problem formulation, Literature review, Hypothesis<br>Data Collection, Ethical Considerations"] & DataStructures
+                ModelDeployment --> PerformanceOptimization["CI/ CD, Maintenance &amp; Logging, Security, Compliance, <br>GPU Acceleration<br><b>Resources: </b><a rel="noopener" href="https://www.google.com" target="_blank">R1</a>, <a rel="noopener" href="https://www.google.com" target="_blank">R2</a>, <a rel="noopener" href="https://www.google.com" target="_blank">R3</a>"]
+                ResearchMethodologies --> Experimentation["<b>Training, Experimentation</b> - Data Preparation, Model Selection, Hyperparameter tuning,&nbsp;<br>Training executions, logs, Validation, Cross validation, Testing, Iterative testing, Benchmarking, Failure Analysis<br><b>Resources: </b><a rel="noopener" href="https://www.google.com" target="_blank">R1</a>, <a rel="noopener" href="https://www.google.com" target="_blank">R2</a>, <a rel="noopener" href="https://www.google.com" target="_blank">R3</a>"]
+                PerformanceOptimization --> MLOpsEngineer["ML Ops Engineer"]
+                AlgorithmOptimization --> AlgorithmOptimizationEngineer["Algorithms and Optimization Engineer"]
+                Experimentation --> AppliedML["Applied ML (NLP, Speech,&nbsp;Computer Vision)<br><b>Resources: </b><a rel="noopener" href="https://www.coursera.org/specializations/deep-learning" target="_blank">R1</a>, <a rel="noopener" href="https://cs231n.stanford.edu/" target="_blank">R2</a>, <a rel="noopener" href="https://course.fast.ai/" target="_blank">R3</a>"] & n6["Model Deployment &amp; Packaging, APIs<br>"]
+                AppliedML --> ProblemSolving["<b>Problem Solving, I</b><strong>dentifying Business Problems, <br></strong>Model Development, Mathematical, theoritical reseaning, Managing entire ML team<br>"] & AdvancedAIResearch["<b>Advanced AI Research</b><br>Research &amp; Innovation, Algorithm Development, Exploration of Complex Problems<br><b>Resources:</b><a rel="noopener" href="https://www.google.com" target="_blank">R1</a>, <a rel="noopener" href="https://www.google.com" target="_blank">R2</a>, <a rel="noopener" href="https://www.google.com" target="_blank">R3</a>"] & n6
+                DeepLearning["<b>Advanced DeepLearning<br></b>Encoder-decoder models, GANs, Attention models, BERT, <br>OpenCV, CNN, RNN, LSTMs, Timeseries models<br><b>Resources: </b><a rel="noopener" href="https://www.coursera.org/specializations/deep-learning" target="_blank">R1</a>, <a rel="noopener" href="https://cs231n.stanford.edu/" target="_blank">R2</a>, <a rel="noopener" href="https://course.fast.ai/" target="_blank">R3</a>"] --> DeepLearningEngineer["DeepLearning Engineer"]
+                AdvancedAIResearch --> AISolutionsArchitect["AI Researcher"]
+                ProblemSolving --> ResearchandPublications["Research Translation of developed models and Publications, Solution Design<br>Manage to Finish the proposed solution, Documentation<br><b>Resources: </b><a rel="noopener" href="https://www.google.com" target="_blank">R1</a>, <a rel="noopener" href="https://www.google.com" target="_blank">R2</a>, <a rel="noopener" href="https://www.google.com" target="_blank">R3</a>"]
+                ResearchandPublications --> AppliedAIScientist["Applied AI Scientist (General)"] & SpeechProcessing["<b>Speech Processing -&nbsp;</b>In depth on Signals, Feature extractions, Mel-spectrogram, <br>Speech detection, Speech Recognition, ASR, HMM, Language Modelling, <br>Speaker Recognition, Diarization, Enhancement, Speaker Separtion, Multi model<br>&nbsp;fusion, Speech emotion recognition, TTS models, denoising<br><b>Resources: </b><a rel="noopener" href="https://www.google.com" target="_blank">R1</a>, <a rel="noopener" href="https://www.google.com" target="_blank">R2</a>, <a rel="noopener" href="https://www.google.com" target="_blank">R3</a>"] & NLP["<b>Natural Language Processing - </b>Bag of words, text processing, n grams, <br>TF IDF, Word2vec, Avg word2vec, text embeddings, NLTK, Spacy, <br>Neural Translation models, LLMS, GPT 1,2,3, Llama models<br><b>Resources: </b><a rel="noopener" href="https://www.google.com" target="_blank">R1</a>, <a rel="noopener" href="https://www.google.com" target="_blank">R2</a>, <a rel="noopener" href="https://www.google.com" target="_blank">R3</a><br>"] & ComputerVision["<b>Computer Vision </b>- CNN, OpenCV, Object detection, Object recognition,<br>Face recognition, Transfer learning, CNN architectures, Object segmentation<br>AlexNet, VGGNet, Resnet, YOLO V3, Video analytics<br><b>Resources: </b><a rel="noopener" href="https://www.coursera.org/specializations/natural-language-processing" target="_blank">R1</a>, <a rel="noopener" href="https://web.stanford.edu/class/cs224n/" target="_blank">R2</a>, <a rel="noopener" href="https://www.coursera.org/specializations/generative-adversarial-networks-gans" target="_blank">R3</a><br>"]
+                SpeechProcessing --> AppliedAIScientistSpeech["Applied Scientist (Speech)"]
+                NLP --> AppliedAIScientistNLP["Applied Scientist (NLP)"]
+                ComputerVision --> AppliedAIScientistCV["Applied Scientist (CV)"]
+                MachineLearning["<b>Machine Learning Fundamentals</b><br>Supervised, Unsupervised algorithms, Regression, Classification, KNN, Decision Trees, Clustering, Naive Bayes, Logistic Regression,<br>SVM, K Means, Feature Engineering, Ensemble models, Evaluation metrics, Neural Networks, train, test, validate data<br><b>Resources: </b><a rel="noopener" href="https://developers.google.com/machine-learning/crash-course/" target="_blank">R1</a>, <a rel="noopener" href="https://www.coursera.org/specializations/machine-learning-introduction" target="_blank">R2</a>, <a rel="noopener" href="https://courses.analyticsvidhya.com/courses/Machine-Learning-Certification-Course-for-Beginners" target="_blank">R3</a>"] --> MLTools
+                AdvancedMath --> MachineLearning
+                DataVisualization --> DataProcessing
+                n6 --> MLEngineer["ML Engineer"] & DeepLearning & AIEngineer["AI Engineer"] & nb["<b>Deep Reinforcement Learning -&nbsp;</b>RL flow, Markov Decision Processes, <br>Multi armed bandit, Dynamic Programming,&nbsp;Multi agent, imitation<br>&nbsp;learning, Policy gradients, Drone control (Prior on Mechanical, <br>Electrical Engineering,&nbsp;Control Systems, CSE)<br><b>Resources: </b><a rel="noopener" href="https://www.google.com" target="_blank">R1</a>, <a rel="noopener" href="https://www.google.com" target="_blank">R2</a>, <a rel="noopener" href="https://www.google.com" target="_blank">R3</a>"]
+                nb --> ns["Robotics Engineer/ Researcher"]
+                MathFoundations:::clickable
+                BasicCoding:::clickable,clickable
+                DataVisualization:::clickable,clickable
+                DataStructures:::clickable,clickable
+                DatabasesSQL:::clickable,clickable
+                DataPipeline:::clickable,clickable
+                DataProcessing:::clickable,clickable
+                ReportingTools:::clickable,clickable
+                AdvancedMath:::clickable,clickable
+                DataEngineer:::clickable,clickable
+                ModelDeployment:::clickable,clickable
+                DataAnalyst:::clickable,clickable
+                MLTools:::clickable,clickable
+                DataScientist:::clickable,clickable
+                AdvancedAI:::clickable,clickable
+                AlgorithmOptimization:::clickable
+                ResearchMethodologies:::clickable,clickable
+                PerformanceOptimization:::clickable,clickable
+                Experimentation:::clickable,clickable
+                MLOpsEngineer:::clickable,clickable
+                AlgorithmOptimizationEngineer:::clickable,clickable
+                AppliedML:::clickable,clickable
+                DeepLearning:::clickable,clickable
+                DeepLearningEngineer:::clickable,clickable
+                AISolutionsArchitect:::clickable,clickable
+                AppliedAIScientist:::clickable,clickable
+                SpeechProcessing:::clickable,clickable
+                NLP:::clickable,clickable
+                ComputerVision:::clickable,clickable
+                AppliedAIScientistSpeech:::clickable,clickable
+                AppliedAIScientistNLP:::clickable,clickable
+                AppliedAIScientistCV:::clickable,clickable
+                MachineLearning:::clickable,clickable
+                MLEngineer:::clickable,clickable
+                AIEngineer:::clickable,clickable
+                style Start stroke:#FFFFFF,color:#000000,fill:#FF6D00,stroke-width:4px,stroke-dasharray: 5
+                style DataEngineer color:#FFFFFF, fill:#AA00FF, stroke:#AA00FF
+                style DataAnalyst color:#FFFFFF, stroke:#00C853, fill:#00C853
+                style DataScientist color:#FFFFFF, stroke:#2962FF, fill:#2962FF
+                style MLOpsEngineer fill:#FFD600,color:#000000
+                style AlgorithmOptimizationEngineer fill:#AA00FF,color:#FFFFFF
+                style DeepLearningEngineer color:#FFFFFF, stroke:#00C853, fill:#00C853
+                style AISolutionsArchitect fill:#000000,color:#FFFFFF
+                style AppliedAIScientist fill:#FF6D00,stroke:#FFFFFF,color:#FFFFFF
+                style AppliedAIScientistSpeech color:#000000,fill:#FFF9C4
+                style AppliedAIScientistNLP fill:#FFE0B2
+                style AppliedAIScientistCV fill:#BBDEFB
+                style MLEngineer fill:#D50000,color:#FFFFFF
+                style AIEngineer fill:#2962FF,stroke:#FFFFFF,color:#FFFFFF
+                style ns color:#FFFFFF,fill:#FF6D00
+                linkStyle 8 stroke:#AA00FF,fill:none
+                linkStyle 9 stroke:#FFD600,fill:none
+                linkStyle 15 stroke:#FFD600,fill:none
+                linkStyle 16 stroke:#FFD600,fill:none
+                linkStyle 18 stroke:#FFD600,fill:none
+                linkStyle 24 stroke:#2962FF,fill:none
+                linkStyle 40 stroke:#2962FF,fill:none
+
+
+            </div>
+        </div>
+    </div>
+    <script>
+        let scale = 1;
+        const chart = document.getElementById('chart');
+        
+        document.getElementById('zoom-in').addEventListener('click', function() {
+            scale *= 1.1;
+            chart.style.transform = `scale(${scale})`;
+        });
+        
+        document.getElementById('zoom-out').addEventListener('click', function() {
+            scale /= 1.1;
+            chart.style.transform = `scale(${scale})`;
+        });
+    </script>
+</body>
+</html>
+
